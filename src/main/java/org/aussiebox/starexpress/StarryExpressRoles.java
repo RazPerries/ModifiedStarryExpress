@@ -9,6 +9,7 @@ import org.aussiebox.starexpress.cca.AllergicComponent;
 import org.aussiebox.starexpress.cca.SilenceComponent;
 import org.aussiebox.starexpress.cca.StarstruckComponent;
 
+import java.awt.*;
 import java.util.HashMap;
 
 public class StarryExpressRoles {
@@ -21,7 +22,7 @@ public class StarryExpressRoles {
 
     public static Role STARSTRUCK = registerRole(new Role(
             StarryExpress.id("starstruck"),
-            0x5747ff,
+            new Color(170, 139, 207).getRGB(),
             true,
             false,
             Role.MoodType.REAL,
@@ -31,7 +32,7 @@ public class StarryExpressRoles {
 
     public static Role MUZZLER = registerRole(new Role(
             StarryExpress.id("muzzler"),
-            0x370387,
+            new Color(35, 7, 207).getRGB(),
             false,
             true,
             Role.MoodType.FAKE,
