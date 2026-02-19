@@ -14,7 +14,7 @@ import java.util.List;
 public interface StarryExpressConstants {
     List<ShopEntry> MUZZLER_SHOP = Util.make(new ArrayList<>(), (entries) -> {
         entries.addAll(GameConstants.SHOP_ENTRIES);
-        entries.addFirst(new ShopEntry(StarryExpressItems.TAPE.getDefaultInstance(), 75, ShopEntry.Type.WEAPON));
+        entries.addFirst(new ShopEntry(StarryExpressItems.TAPE.getDefaultInstance(), 50, ShopEntry.Type.WEAPON));
     });
 
     ResourceLocation SILENCED_OUTSIDE_DEATH_REASON = StarryExpress.id("silenced_and_outside");
