@@ -90,10 +90,10 @@
 
   "guidebook.role.noellesroles:conductor": "Conductor",
       "guidebook.role.title.noellesroles:conductor": "It's not a Lockpick I Swear",
-      "guidebook.role.description.noellesroles:conductor": "The driver of the %1$s who has access to every room on the train.\n\nThe Conductor holds a Master Key, which grants access to every locked door on the %1$s. This item is dropped on death, which can be picked up by killers.\n\nIf there are less than 10 passengers aboard the %1$s, the Conductor's Master Keys will appear as Lockpicks.",
+      "guidebook.role.description.noellesroles:conductor": "The driver of the %1$s who has access to every room on the train.\n\nThe Conductor holds a Master Key, which grants access to every locked door on the %1$s. This item is dropped on death, which can be picked up by killers.\n\nIf there are less than 10 passengers aboard the %1$s, the Conductor's Master Keys will appear as Lockpicks.\n\nThere can only be 1 conductor per round.",
   "guidebook.role.noellesroles:bartender": "Bartender",
       "guidebook.role.title.noellesroles:bartender": "Drink Connoisseur",
-      "guidebook.role.description.noellesroles:bartender": "An innocent who can see poisoned food/drink trays, buy drinks for themselves, and see any passenger that drinks a beverage.\n\nPassengers who drink will be glowed to the bartender for 10 seconds.\n\nDrinks cost 75 coins for the bartender, and have no special abilities associated with them.\n\nFood/Drink trays that have been poisoned will emit pink clouds from it.",
+      "guidebook.role.description.noellesroles:bartender": "An innocent who can see poisoned food/drink trays, buy drinks for themselves, and see any passenger that drinks a beverage.\n\nPassengers who drink will be glowed to the bartender for 10 seconds.\n\nDrinks cost 75 coins for the bartender, and have no special abilities associated with them.\n\nFood/Drink trays or beds that have been poisoned will emit pink clouds from it.\n\nThere can only be 1 bartender per round.",
   "guidebook.role.noellesroles:noisemaker": "Noisemaker",
       "guidebook.role.title.noellesroles:noisemaker": "hey guys, hey, heyyyyy",
       "guidebook.role.description.noellesroles:noisemaker": "An innocent whose body will glow upon meeting their demise.\n\nNoisemakers gain 50 coins per task completed and 5 coins at passive intervals, which can be used to purchase Firecrackers.",
@@ -115,8 +115,14 @@
       "guidebook.role.description.noellesroles:guesser": "Gives a killer the ability to guess the role of any non-killer player.\n\nSuccessfully guessing correctly will cause the victim to die immediately. Guessing incorrectly will cause the guesser to die.\n\nThis modifier can only be assigned to killers.",
   "guidebook.role.noellesroles:graverobber": "Graverobber",
       "guidebook.role.title.noellesroles:graverobber": "Better Coroner",
-      "guidebook.role.description.noellesroles:graverobber": "Gives a killer the ability to see information about dead bodies like the Coroner does.\n\nThis modifier can only be assigned to killers.",
+      "guidebook.role.description.noellesroles:graverobber": "Gives a killer the ability to see information about dead bodies like the Coroner does, but can also see their modifier as well.\n\nThis modifier can only be assigned to killers.",
   "guidebook.role.noellesroles:feather": "Feather",
       "guidebook.role.title.noellesroles:feather": "Nuh uh Can't Body Block Me",
-      "guidebook.role.description.noellesroles:feather": "Makes the passenger fall slowly and unable to collide with other players.\n\nThese unique abilities can allow the passenger to fall off the side of the train and still have time to save themselves."
+      "guidebook.role.description.noellesroles:feather": "Makes the passenger fall slowly and unable to collide with other players.\n\nThese unique abilities can allow the passenger to fall off the side of the train and still have time to save themselves.",
+  "guidebook.role.noellesroles:celebrity": "Celebrity",
+    "guidebook.role.title.noellesroles:celebrity": "Anti-Civilian Grouping",
+    "guidebook.role.description.noellesroles:celebrity": "Gives a killer the ability to gain coins by being near other players up to 5 blocks away.\n\nThe killer can gain up to 20 additional coins (4 players) every time they gain coins passively.\n\nCannot gain coins from other killers or neutral evils.",
+  "guidebook.role.noellesroles:sixth_sense": "Sixth Sense",
+    "guidebook.role.title.noellesroles:sixth_sense": "Budget Killer Instinct",
+    "guidebook.role.description.noellesroles:sixth_sense": "Makes a civilian able to see items from 8 blocks away.\n\nItems in range will glow orange, which can be seen through walls.\n\nCan only be applied to 1 civilian per round. Vigilantes and Bartenders cannot have sixth sense."
 }
