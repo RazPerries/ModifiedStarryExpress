@@ -12,14 +12,14 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(LimitedInventoryScreen.class)
-public abstract class GuidebookMixin extends LimitedHandledScreen<InventoryMenu> {
-    public GuidebookMixin(InventoryMenu handler, Inventory inventory, Component title) {
+public abstract class LimitedInventoryScreenMixin extends LimitedHandledScreen<InventoryMenu> {
+    public LimitedInventoryScreenMixin(InventoryMenu handler, Inventory inventory, Component title) {
         super(handler, inventory, title);
     }
 
     @Inject(method = "init", at = @At("HEAD"))
     void renderGuidebookButton(CallbackInfo ci) {
-        GuidebookButtonWidget child = new GuidebookButtonWidget(((LimitedInventoryScreen)(Object)this), 10, 10);
+        GuidebookButtonWidget child = new GuidebookButtonWidget(10, 10);
         this.addRenderableWidget(child);
     }
 }

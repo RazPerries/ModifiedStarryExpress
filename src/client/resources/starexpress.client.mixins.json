@@ -4,8 +4,10 @@
   "package": "org.aussiebox.starexpress.client.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
-    "GuidebookMixin",
+    "CreativeModeInventoryScreenMixin",
     "HeldItemRendererMixin",
+    "InventoryScreenMixin",
+    "LimitedInventoryScreenMixin",
     "muzzler.MuzzlerShopMixin",
     "starstruck.StarstruckHudMixin"
   ],
