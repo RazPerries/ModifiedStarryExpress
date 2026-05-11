@@ -1,12 +1,12 @@
 package org.aussiebox.starexpress.client.mixin.muzzler;
 
+import dev.doctor4t.wathe.cca.GameWorldComponent;
 import dev.doctor4t.wathe.client.gui.RoleNameRenderer;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.network.chat.Component;
-import org.aussiebox.starexpress.StarryExpress;
 import org.aussiebox.starexpress.StarryExpressRoles;
 import org.aussiebox.starexpress.cca.SilenceComponent;
 import org.aussiebox.starexpress.client.StarryExpressClient;
@@ -27,8 +27,9 @@ public class SilencedHudMixin {
         if (StarryExpressClient.target == null) return;
 
         SilenceComponent victimSilence = SilenceComponent.KEY.get(StarryExpressClient.target);
-
-        if (!victimSilence.isSilenced() || victimSilence.getSilencedTicks() < StarryExpress.CONFIG.muzzlerConfig.displaySilencedTipDelay() * 20) return;
+        GameWorldComponent gameWorldComponent = GameWorldComponent.KEY.get(player.level());
+        if (!victimSilence.isSilenced()) return;
+        if (gameWorldComponent.isInnocent(player) && !player.isSpectator() && !player.isCreative()) return;
 
         renderSilencedTip(renderer, context);
     }

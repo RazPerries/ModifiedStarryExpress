@@ -25,6 +25,7 @@ public class MainCommand {
 
         SilenceComponent.KEY.get(player).setSilenced(true);
         SilenceComponent.KEY.get(player).setSilencer(player.getUUID());
+        SilenceComponent.KEY.get(player).setTearChecks(0);
         SilenceComponent.KEY.get(player).sync();
 
         return 1;

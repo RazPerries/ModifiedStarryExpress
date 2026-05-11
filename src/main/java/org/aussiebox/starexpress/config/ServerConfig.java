@@ -76,11 +76,11 @@ public class ServerConfig {
 
         @Comment("The number of times players need to tear the tape off of a silenced player to unsilence them. Set to 0 to disable this feature.")
         @RangeConstraint(min = 0, max = 1337)
-        public int tapeTearCheckCount = 5;
+        public int tapeTearCheckCount = 4;
 
         @Comment("The amount of mood, on a scale of 0.0 to 1.0, that is taken from a player when another player attempts to tear their silencing tape off.")
         @RangeConstraint(min = 0.0F, max = 1.0F)
-        public float tapeTearMoodChange = 0.1F;
+        public float tapeTearMoodChange = 0.05F;
 
         @Comment("When enabled, completing a tape check on a player with 0.0 mood remaining will kill the checked player.")
         public boolean killIfCheckedAtZero = true;

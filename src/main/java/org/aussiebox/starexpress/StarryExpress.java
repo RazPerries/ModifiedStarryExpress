@@ -75,7 +75,7 @@ public class StarryExpress implements ModInitializer {
             if (!(entity instanceof Player victim)) return InteractionResult.PASS;
             if (CONFIG.muzzlerConfig.tapeTearCheckCount() == 0) return InteractionResult.PASS;
 
-            if (!player.getMainHandItem().is(StarryExpressItems.TAPE)) {
+            if (player.getMainHandItem().isEmpty() && !player.isSpectator() && player.isShiftKeyDown()) {
                 SilenceComponent victimSilence = SilenceComponent.KEY.get(victim);
                 if (!victimSilence.isSilenced()) return InteractionResult.PASS;
                 if (SilenceComponent.KEY.get(player).isSilenced()) return InteractionResult.PASS;
@@ -87,12 +87,17 @@ public class StarryExpress implements ModInitializer {
 
                 victimSilence.sync();
 
-                PlayerMoodComponent victimMood = PlayerMoodComponent.KEY.get(victim);
+                // Hurt mood of remover
+                PlayerMoodComponent playerMood = PlayerMoodComponent.KEY.get(player);
+                playerMood.setMood(playerMood.getMood() - CONFIG.muzzlerConfig.tapeTearMoodChange());
+                playerMood.sync();
 
+                // Hurt mood of taped
+                PlayerMoodComponent victimMood = PlayerMoodComponent.KEY.get(victim);
                 victimMood.setMood(victimMood.getMood() - CONFIG.muzzlerConfig.tapeTearMoodChange());
                 victimMood.sync();
 
-                if (victimMood.getMood() <= 0.0F && CONFIG.muzzlerConfig.killIfCheckedAtZero()) {
+                if (victimMood.getMood() <= 0.0F) {
                     GameFunctions.killPlayer(victim, true, victim.level().getPlayerByUUID(victimSilence.getSilencer()), StarryExpressConstants.SILENCED_TAPE_REMOVED_DEATH_REASON);
                 }
 

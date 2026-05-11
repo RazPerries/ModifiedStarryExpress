@@ -2,6 +2,7 @@ package org.aussiebox.starexpress;
 
 import dev.doctor4t.wathe.api.Role;
 import dev.doctor4t.wathe.api.WatheRoles;
+import dev.doctor4t.wathe.game.GameConstants;
 import org.agmas.harpymodloader.Harpymodloader;
 import org.agmas.harpymodloader.events.ResetPlayerEvent;
 import org.aussiebox.starexpress.cca.AbilityComponent;
@@ -26,7 +27,7 @@ public class StarryExpressRoles {
             true,
             false,
             Role.MoodType.REAL,
-            WatheRoles.CIVILIAN.getMaxSprintTime() + 100, // Civilian sprint time + 5 seconds
+            WatheRoles.CIVILIAN.getMaxSprintTime(),
             false
     ));
 
@@ -36,7 +37,7 @@ public class StarryExpressRoles {
             false,
             true,
             Role.MoodType.FAKE,
-            WatheRoles.KILLER.getMaxSprintTime(),
+            WatheRoles.CIVILIAN.getMaxSprintTime()*2,
             true
     ));
 
