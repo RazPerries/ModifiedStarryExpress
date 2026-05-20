@@ -15,6 +15,8 @@ public class StarstruckComponent implements AutoSyncedComponent, ServerTickingCo
     private final Player player;
     public int ticks = 0;
 
+    public int abilityCost = 150;
+
     public StarstruckComponent(Player player) {
         this.player = player;
     }

@@ -22,6 +22,6 @@
     "PlayerEntityMixin",
     "allergic.AllergicInstinctMixin",
     "muzzler.SilencedHudMixin",
-    "starstruck.StarstruckInstinctMixin"
+    "starstruck.StarstruckStoreRenderMixin"
   ]
 }

@@ -5,7 +5,6 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "GameFunctionsMixin",
-    "MoodMixin",
     "allergic.AllergicEatMixin",
     "allergic.AllergicGameFunctionsMixin",
     "muzzler.MuzzlerShopComponentMixin"

@@ -269,16 +269,6 @@ public class GuidebookScreen extends BaseOwoScreen<FlowLayout> {
                 allergicConfig.armorChance(),
                 allergicConfig.poisonChance()
         ));
-
-        if (Objects.equals(roleID, "starexpress:starstruck")) {
-            if (StarryExpress.CONFIG.starstruckConfig.taskReducesCooldown()) {
-                roleDescription.text(roleDescription.text().copy().append(Component.translatable(
-                        "guidebook.role.description.starexpress:starstruck.cooldown_decreased",
-                        StarryExpress.CONFIG.starstruckConfig.taskCooldownReduction()
-                )));
-            }
-        }
-
         this.displayedEntryButton = newButton;
     }
 

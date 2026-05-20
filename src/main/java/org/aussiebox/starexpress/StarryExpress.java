@@ -2,6 +2,7 @@ package org.aussiebox.starexpress;
 
 import dev.doctor4t.wathe.cca.GameWorldComponent;
 import dev.doctor4t.wathe.cca.PlayerMoodComponent;
+import dev.doctor4t.wathe.cca.PlayerShopComponent;
 import dev.doctor4t.wathe.game.GameFunctions;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.UseEntityCallback;
@@ -9,12 +10,14 @@ import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import org.agmas.noellesroles.Noellesroles;
 import org.aussiebox.starexpress.block.ModBlocks;
 import org.aussiebox.starexpress.block.entity.ModBlockEntities;
 import org.aussiebox.starexpress.cca.AbilityComponent;
@@ -55,16 +58,17 @@ public class StarryExpress implements ModInitializer {
             GameWorldComponent gameWorldComponent = GameWorldComponent.KEY.get(context.player().level());
 
             if (!GameFunctions.isPlayerAliveAndSurvival(context.player())) return;
-
             if (gameWorldComponent.isRole(context.player(), StarryExpressRoles.STARSTRUCK) && abilityComponent.cooldown <= 0) {
-                abilityComponent.setCooldown(CONFIG.starstruckConfig.abilityCooldown() * 20);
-                StarstruckComponent.KEY.get(context.player()).setTicks(CONFIG.starstruckConfig.abilityDuration() * 20);
-
-                ServerLevel level = context.player().serverLevel();
-                level.playSound(null, BlockPos.containing(context.player().position()), SoundEvents.RESPAWN_ANCHOR_CHARGE, SoundSource.PLAYERS, 1.0F, 1.0F);
-                level.sendParticles(ParticleTypes.END_ROD, context.player().getX(), context.player().getY(), context.player().getZ(), 75,  0.5,  1.5,  0.5,  0.1);
+                PlayerShopComponent playerShopComponent = PlayerShopComponent.KEY.get(context.player());
+                StarstruckComponent starstruckComponent = StarstruckComponent.KEY.get(context.player());
+                if (playerShopComponent.balance >= starstruckComponent.abilityCost) {
+                    abilityComponent.setCooldown(CONFIG.starstruckConfig.abilityCooldown() * 20);
+                    StarstruckComponent.KEY.get(context.player()).setTicks(CONFIG.starstruckConfig.abilityDuration() * 20);
+                    playerShopComponent.setBalance(playerShopComponent.balance - starstruckComponent.abilityCost);
+                } else {
+                    context.player().displayClientMessage(Component.translatable("tip.starexpress.cannot_afford", starstruckComponent.abilityCost).withColor(StarryExpressRoles.STARSTRUCK.color()), true);
+                }
             }
-
         });
     }
 

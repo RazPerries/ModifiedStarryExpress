@@ -19,16 +19,9 @@ public class ServerConfig {
 
     public static class StarstruckConfig {
 
-        @Comment("When enabled, completing a task as the Starstruck will reduce its ability cooldown.")
-        public boolean taskReducesCooldown = true;
-
-        @Comment("The number of seconds to reduce the Starstruck's ability cooldown by upon task completion.")
-        @RangeConstraint(min = 1, max = 600)
-        public int taskCooldownReduction = 5;
-
         @Comment("The Starstruck's ability cooldown, in seconds.")
         @RangeConstraint(min = 1, max = 600)
-        public int abilityCooldown = 90;
+        public int abilityCooldown = 65;
 
         @Comment("The Starstruck's ability duration, in seconds.")
         @RangeConstraint(min = 1, max = 600)
