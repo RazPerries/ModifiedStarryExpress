@@ -51,12 +51,4 @@ public class TapeItem extends Item {
 
         return InteractionResult.SUCCESS;
     }
-
-    @Override
-    public void appendHoverText(@NotNull ItemStack itemStack, @NotNull TooltipContext context, @NotNull List<Component> tooltip, @NotNull TooltipFlag type) {
-        super.appendHoverText(itemStack, context, tooltip, type);
-        tooltip.add(Component.translatable("item.starexpress.tape.tooltip.1").withColor(0xAAAAAA));
-        tooltip.add(Component.translatable("item.starexpress.tape.tooltip.2").withColor(0xAAAAAA));
-        tooltip.add(Component.translatable("item.starexpress.tape.tooltip.3").withColor(0xAAAAAA));
-    }
 }

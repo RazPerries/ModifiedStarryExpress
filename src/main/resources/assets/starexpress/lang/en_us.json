@@ -5,10 +5,7 @@
   "block.starexpress.circuitweaver_plush": "Circuitweaver Plush",
   "block.starexpress.jade_plush": "Jade Plush",
   "item.starexpress.tape": "Tape",
-      "item.starexpress.tape.tooltip.1": "Use on another player to silence their pathetic cries.",
-      "item.starexpress.tape.tooltip.2": "Silenced players will suffocate if left outside for too long.",
-      "item.starexpress.tape.tooltip.3": "Invisible in hand.",
-      "subtitles.starexpress.item.tape_apply": "Something Applies Tape",
+      "item.starexpress.tape.tooltip": "Silence a player. Invisible when held. Silent when applied.\n\nSilenced innocents suffer major debuffs while being taped.\n\nOne-time use. 20s cooldown.",
 
   "announcement.role.starexpress.starstruck": "Starstruck",
   "announcement.goals.starexpress.starstruck": "Gain a burst of speed for a short period of time!",
