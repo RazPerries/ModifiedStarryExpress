@@ -1,19 +1,15 @@
 package org.aussiebox.starexpress.item.custom;
 
 import dev.doctor4t.wathe.game.GameFunctions;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
 import org.aussiebox.starexpress.StarryExpress;
 import org.aussiebox.starexpress.cca.SilenceComponent;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.List;
 
 public class TapeItem extends Item {
     public TapeItem(Properties properties) {

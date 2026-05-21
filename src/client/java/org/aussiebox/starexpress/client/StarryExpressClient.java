@@ -79,9 +79,7 @@ public class StarryExpressClient implements ClientModInitializer {
 
         registerPackets();
 
-        ItemTooltipCallback.EVENT.register(((itemStack, tooltipContext, tooltipType, list) -> {
-            tooltipHelper(StarryExpressItems.TAPE, itemStack, list);
-        }));
+        ItemTooltipCallback.EVENT.register(((itemStack, tooltipContext, tooltipType, list) -> tooltipHelper(StarryExpressItems.TAPE, itemStack, list)));
     }
 
     public void tooltipHelper(Item item, ItemStack itemStack, List<Component> list) {
