@@ -1,11 +1,10 @@
 package org.aussiebox.starexpress;
 
 import dev.doctor4t.wathe.game.GameConstants;
-import dev.doctor4t.wathe.index.WatheItems;
 import dev.doctor4t.wathe.util.ShopEntry;
+import org.BsXinQin.kinswathe.KinsWatheItems;
 import net.minecraft.Util;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ItemStack;
 import org.aussiebox.starexpress.item.StarryExpressItems;
 
 import java.util.ArrayList;
@@ -14,6 +13,7 @@ import java.util.List;
 public interface StarryExpressConstants {
     List<ShopEntry> MUZZLER_SHOP = Util.make(new ArrayList<>(), (entries) -> {
         entries.addAll(GameConstants.SHOP_ENTRIES);
+        entries.addFirst(new ShopEntry(KinsWatheItems.KNOCKOUT_DRUG.getDefaultInstance(), 150, ShopEntry.Type.WEAPON));
         entries.addFirst(new ShopEntry(StarryExpressItems.TAPE.getDefaultInstance(), 50, ShopEntry.Type.WEAPON));
     });
 

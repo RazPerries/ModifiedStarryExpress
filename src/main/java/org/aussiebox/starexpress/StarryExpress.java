@@ -8,16 +8,12 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.UseEntityCallback;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import org.agmas.noellesroles.Noellesroles;
+import org.agmas.harpymodloader.events.ModdedRoleAssigned;
 import org.aussiebox.starexpress.block.ModBlocks;
 import org.aussiebox.starexpress.block.entity.ModBlockEntities;
 import org.aussiebox.starexpress.cca.AbilityComponent;
@@ -73,6 +69,11 @@ public class StarryExpress implements ModInitializer {
     }
 
     public void registerEvents() {
+        ModdedRoleAssigned.EVENT.register((player,role)->{
+            if (role.equals(StarryExpressRoles.MUZZLER)) {
+                player.addItem(StarryExpressItems.TAPE.getDefaultInstance());
+            }
+        });
 
         UseEntityCallback.EVENT.register((player, level, hand, entity, hitResult) -> {
 
