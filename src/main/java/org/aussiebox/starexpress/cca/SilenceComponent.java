@@ -27,10 +27,10 @@ public class SilenceComponent implements AutoSyncedComponent, ServerTickingCompo
     public static final ComponentKey<SilenceComponent> KEY = ComponentRegistry.getOrCreate(StarryExpress.id("silence"), SilenceComponent.class);
 
     private final Player player;
-    public float drainStart = 20;
+    public float drainStart = 15;
     public float silencedDrain = 0.0f;
-    public int silencedInterval = 20;
-    public int silencedKillTimer = 180;
+    public int silencedInterval = 15;
+    public int silencedKillTimer = 90;
 
     @Setter
     @Getter
@@ -79,13 +79,13 @@ public class SilenceComponent implements AutoSyncedComponent, ServerTickingCompo
 
             // If these initial interval passes, then increase mood drain by a little bit
             if (silencedTicks == silencedInterval * 20) {
-                this.silencedDrain += 0.005f;
-                this.silencedInterval += 20;
+                this.silencedDrain += 0.01f;
+                this.silencedInterval += 15;
             }
 
-            // If silenced player is 60 seconds away from dying, warn them
-            if (silencedTicks == (silencedKillTimer - 60) * 20) {
-                this.player.displayClientMessage(Component.literal("You feel light headed. You will collapse soon without help.").withStyle(ChatFormatting.BLUE), true);
+            // If silenced player is 20 seconds away from dying, warn them
+            if (silencedTicks == (silencedKillTimer - 20) * 20) {
+                this.player.displayClientMessage(Component.literal("You feel light headed and exhausted.").withStyle(ChatFormatting.BLUE), true);
             }
 
             // Kill silenced player after this time passes still silenced

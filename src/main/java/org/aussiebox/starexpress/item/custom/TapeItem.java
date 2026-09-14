@@ -45,6 +45,6 @@ public class TapeItem extends Item {
         victimSilence.setTearChecks(0);
         victimSilence.sync();
 
-        return InteractionResult.PASS;
+        return InteractionResult.CONSUME;
     }
 }

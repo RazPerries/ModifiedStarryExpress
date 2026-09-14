@@ -86,7 +86,11 @@ public class StarryExpress implements ModInitializer {
                 if (SilenceComponent.KEY.get(player).isSilenced()) return InteractionResult.PASS;
 
                 victimSilence.setTearChecks(victimSilence.getTearChecks() + 1);
-                victim.level().playSound(null, victim.getX(), victim.getY(), victim.getZ(), ModSounds.ITEM_TAPE_APPLY, SoundSource.PLAYERS, 1.0F, 2.0F);
+
+                //Optimized? No. I'll fix this later ig
+                if (victimSilence.getTearChecks() >= 4) {
+                    victim.level().playSound(null, victim.getX(), victim.getY(), victim.getZ(), ModSounds.ITEM_TAPE_APPLY, SoundSource.PLAYERS, 1.0F, 2.0F);
+                }
 
                 if (victimSilence.getTearChecks() >= CONFIG.muzzlerConfig.tapeTearCheckCount()) victimSilence.setSilenced(false);
 
@@ -106,7 +110,10 @@ public class StarryExpress implements ModInitializer {
                     GameFunctions.killPlayer(victim, true, victim.level().getPlayerByUUID(victimSilence.getSilencer()), StarryExpressConstants.SILENCED_TAPE_REMOVED_DEATH_REASON);
                 }
 
-                return InteractionResult.SUCCESS;
+                if (victimSilence.getTearChecks() >= 4) {
+                    return InteractionResult.SUCCESS;
+                }
+                return InteractionResult.CONSUME;
             }
 
             return InteractionResult.PASS;
