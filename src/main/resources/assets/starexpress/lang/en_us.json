@@ -5,7 +5,7 @@
   "block.starexpress.circuitweaver_plush": "Circuitweaver Plush",
   "block.starexpress.jade_plush": "Jade Plush",
   "item.starexpress.tape": "Tape",
-      "item.starexpress.tape.tooltip": "Silence a player. Invisible when held. Silent when applied.\n\nSilenced innocents suffer major debuffs while being taped.\n\nOne-time use. 20s cooldown.",
+      "item.starexpress.tape.tooltip": "Silence a player. Invisible when held. Silent when applied.\n\nSilenced innocents suffer major debuffs while being taped.\n\nOne-time use. 10s cooldown.",
 
   "announcement.role.starexpress.starstruck": "Starstruck",
   "announcement.goals.starexpress.starstruck": "Gain a burst of speed for a short period of time!",

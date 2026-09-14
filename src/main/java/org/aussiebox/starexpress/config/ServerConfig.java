@@ -61,7 +61,7 @@ public class ServerConfig {
 
         @Comment("The cooldown, in seconds, of the Tape item when the Muzzler uses it on a player.")
         @RangeConstraint(min = 0, max = 600)
-        public int tapeCooldown = 20;
+        public int tapeCooldown = 10;
 
         @Comment("The time, in seconds, it takes for a silenced player to suffocate when outside. Set to 0 to disable.")
         @RangeConstraint(min = 0, max = 600)
